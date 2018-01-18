@@ -5,9 +5,11 @@ From Block `#315001` a 5% dev fee is effective.
 This does not reduce the standard block reward of 50 LINX for miners, it's a separate TX.
 Mining pools will need to update their wallets to the latest version of the [source](https://github.com/linx-project/linX.git) and also make changes to their pool code and config file to allow for the new block template and avoid receiving rejected blocks.
 
+
+
 **UPDATE YOUR WALLET TO THE LATEST VERSION**
 
-Do this right now! `V1.0.0.4` has been updated with the new block template, it's been set to autoswitch at the right time so you can safely install this now. If you are still running `v1.0.0.3` when the dev fee starts you will start to see rejected blocks. 
+Do this right now! `v1.0.0.4` has been updated with the new block template, it's been set to autoswitch at the right time so you can safely install this now. If you are still running `v1.0.0.3` when the dev fee starts you will start to see rejected blocks. 
 
 Either git pull or clone and build from scratch now.
 ```
@@ -15,7 +17,7 @@ git clone https://github.com/linx-project/linX.git
 ```
 
 
-**Reconfigure your pool for Linx**
+**RECONFIGURE YOUR POOL FOR LINX**
 
 **!! IMPORTANT !!**
 
