@@ -1,0 +1,80 @@
+{
+    "enabled": true,
+    "coin": "linx.json",
+
+    "auxes": [],
+    
+    "address": "YOURPOOLWALLETADDRESSHERE",
+
+    "rewardRecipients": {
+    
+    // The FIRST recipient MUST be the exact address and the amount specified below
+    // If it isn't, any found blocks will be rejected
+    // Any change to the address or the amount will also result in blocks being rejected
+    
+        "XF7kCcs4woQD9WWnCHuN6SWPeUNK2fBspr": 2.5,
+        
+        // Now add your pool fee here as normal
+        
+        "YOURPOOLFEEWALLETADDRESSHERE": 1.0
+    },
+
+    "paymentProcessing": {
+        "enabled": true,
+        "paymentInterval": 600,
+        "minimumPayment": 9999999999,
+        "daemon": {
+            "host": "127.0.0.1",
+            "port": 12924,
+            "user": "testuser",
+            "password": "testpass"
+        }
+    },
+
+    "ports": {
+        "3008": {
+            "diff": 8
+        },
+        "3032": {
+            "diff": 32,
+            "varDiff": {
+                "minDiff": 8,
+                "maxDiff": 512,
+                "targetTime": 15,
+                "retargetTime": 90,
+                "variancePercent": 30
+            }
+        },
+        "3256": {
+            "diff": 256
+        }
+    },
+
+    "daemons": [
+        {
+            "host": "127.0.0.1",
+            "port": 12924,
+            "user": "testuser",
+            "password": "testpass"
+        }
+    ],
+
+    "p2p": {
+        "enabled": false,
+        "host": "127.0.0.1",
+        "port": 12924,
+        "disableTransactions": false
+    },
+
+    "mposMode": {
+        "enabled": false,
+        "host": "127.0.0.1",
+        "port": 3306,
+        "user": "me",
+        "password": "mypass",
+        "database": "ltc",
+        "checkPassword": false,
+        "autoCreateWorker": false
+    }
+
+}
