@@ -12,7 +12,7 @@
     // If it isn't, any found blocks will be rejected
     // Any change to the address or the amount will also result in blocks being rejected
     
-        "XF7kCcs4woQD9WWnCHuN6SWPeUNK2fBspr": 2.5,
+        "XF7kCcs4woQD9WWnCHuN6SWPeUNK2fBspr": 1.25,
         
         // Now add your pool fee here as normal
         
