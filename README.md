@@ -1,15 +1,17 @@
 # linx-unomp-pool-settings
 **Linx specific settings for mining pools**
 
-From Block `#315001` a 5% dev fee is effective.
-This does not reduce the standard block reward of 50 LINX for miners, it's a separate TX.
+From Block `#315001` a 5% dev fee was introduced.
+This did not reduce the standard block reward for miners, it is a separate TX.
+The dev fee halves inline with the block reward halving.
+
+The current block reward is 25 Linx with an additional dev fee of 1.25 Linx, meaning each new block generates 26.25 Linx in total.
+
 Mining pools will need to update their wallets to the latest version of the [source](https://github.com/linx-project/linX.git) and also make changes to their pool code and config file to allow for the new block template and avoid receiving rejected blocks.
 
 
 
 **UPDATE YOUR WALLET TO THE LATEST VERSION**
-
-Do this right now! `v1.0.0.4` has been updated with the new block template, it's been set to autoswitch at the right time so you can safely install this now. If you are still running `v1.0.0.3` when the dev fee starts you will start to see rejected blocks. 
 
 Either git pull or clone and build from scratch now.
 ```
@@ -19,14 +21,9 @@ git clone https://github.com/linx-project/linX.git
 
 **RECONFIGURE YOUR POOL FOR LINX**
 
-**!! IMPORTANT !!**
-
-DO NOT try to implement this code BEFORE block `#315001` as it will fail. This will only work from
-block `#315001` onwards.
-
 There are only a couple of things that need to be changed :
 
-1) The first `rewardRecipient` in your pool config file must pay 2.5 to the Dev Fee address. 
+1) The first `rewardRecipient` in your pool config file must pay 1.25 to the Dev Fee address. 
    If it is not the first payout or the address or amount is changed, blocks will be rejected.
    
    ```
@@ -34,7 +31,7 @@ There are only a couple of things that need to be changed :
    
         // Dev fee MUST come first  
         // Do not change this line
-        "XF7kCcs4woQD9WWnCHuN6SWPeUNK2fBspr": 2.5,
+        "XF7kCcs4woQD9WWnCHuN6SWPeUNK2fBspr": 1.25,
         
         // Now add your pool fee here as normal    
         "YOURPOOLFEEWALLETADDRESSHERE": 1.0
